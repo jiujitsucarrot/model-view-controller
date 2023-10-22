@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 
 // Database connection setup
-const connection = require('./config/connection');
+const connection = require('../config/connection');
 
 // Engine setup
 app.engine('handlebars', require('express-handlebars')({ defaultLayout: 'main' }));

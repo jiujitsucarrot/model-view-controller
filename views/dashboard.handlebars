@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home - The Blog Post</title>
+        <title>Dashboard - The Blog Post</title>
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
@@ -11,18 +11,20 @@
         <!-- Main Content -->
         <div class="container">
             <!-- Existing Blog Posts -->
-            {{#each posts}}
+            {{#each userPosts}}
                 <div class="post">
                     <h2>{{title}}</h2>
                     <p>{{formatDate created_at}}</p>
                     <p>{{contents}}</p>
+                    <a href="/update/{{id}}" class="btn">Edit</a>
+                    <a href="/delete/{{id}}" class="btn">Delete</a>
                 </div>
             {{/each}}
 
-            <!-- Option to login -->
-            <a href="/login" class="btn">Log In</a>
+            <!-- Option to add a new blog post -->
+            <a href="/new" class="btn">Add a New Blog Post</a>
         </div>
 
-        <script src="/js/homepage.js"></script>
+        <script src="/js/dashboard.js"></script>
     </body>
 </html>
